@@ -19,13 +19,13 @@ html, body {
 }
 
 #cursor{
-        height: 20px;
-        width: 20px;
+        height: 10px;
+        width: 10px;
         background-color: #fff;
         border-radius: 50%;
         position: absolute;
         mix-blend-mode: difference;
-        transition: all linear 0.2s;
+        transition: linear 0.2s;
 
 }
 
@@ -41,7 +41,7 @@ html, body {
     padding: 30px 40px;
 }
 
-.nav img{
+.nav h2{
     width: 100px;
 }
 

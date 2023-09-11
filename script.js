@@ -9,15 +9,15 @@ main.addEventListener('mousemove', (dets) =>{
     cursorMain.style.top = dets.y + "px";
 })
 
-logoImg.addEventListener('mousemove', () =>{
-    cursorMain.style.height = "40px";
-    cursorMain.style.width = "40px";
-})
+// logoImg.addEventListener('mousemove', () =>{
+//     cursorMain.style.height = "40px";
+//     cursorMain.style.width = "40px";
+// })
 
-logoImg.addEventListener('mouseleave', () =>{
-    cursorMain.style.height = "20px";
-    cursorMain.style.width = "20px";
-});
+// logoImg.addEventListener('mouseleave', () =>{
+//     cursorMain.style.height = "10px";
+//     cursorMain.style.width = "10px";
+// });
 
 
 
@@ -27,13 +27,13 @@ logoImg.addEventListener('mouseleave', () =>{
 
 heads.forEach(head => {
     head.addEventListener('mousemove', function() {
-        cursorMain.style.height = "100px";
-        cursorMain.style.width = "100px";
+        cursorMain.style.height = "75px";
+        cursorMain.style.width = "75px";
     });
 
     head.addEventListener('mouseleave', function() {
-        cursorMain.style.height = "20px";
-        cursorMain.style.width = "20px";
+        cursorMain.style.height = "10px";
+        cursorMain.style.width = "10px";
     });
 });
 

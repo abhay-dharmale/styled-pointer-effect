@@ -1,69 +1,36 @@
 let cursorMain = document.querySelector("#cursor");
 let main = document.querySelector("#main");
-let logoImg = document.querySelector(".logo");
-
 let heads = document.querySelectorAll("#heading");
+let overlayItems = document.querySelectorAll(".overlay");
+let images = document.querySelectorAll(".heading img");
+
+let xOffsetValues = []; // Array to store X-offset values for each image
+let yOffsetValues = []; // Array to store Y-offset values for each image
+
+xOffsetValues.push(-250); // For the first image
+yOffsetValues.push(-440); // For the first image
+xOffsetValues.push(-655); // For the second image
+yOffsetValues.push(-445); // For the second image
+xOffsetValues.push(-1075); // For the third image
+yOffsetValues.push(-445); // For the third image
 
 main.addEventListener('mousemove', (dets) =>{
     cursorMain.style.left = dets.x + "px";
     cursorMain.style.top = dets.y + "px";
 })
 
-// logoImg.addEventListener('mousemove', () =>{
-//     cursorMain.style.height = "40px";
-//     cursorMain.style.width = "40px";
-// })
-
-// logoImg.addEventListener('mouseleave', () =>{
-//     cursorMain.style.height = "10px";
-//     cursorMain.style.width = "10px";
-// });
-
-
-
-
-
-
-
-heads.forEach(head => {
-    head.addEventListener('mousemove', function() {
-        cursorMain.style.height = "75px";
-        cursorMain.style.width = "75px";
+overlayItems.forEach((overlayItem, index) => {
+    overlayItem.addEventListener('mousemove', (event) => {
+        images[index].style.scale = 1;
+        cursorMain.style.opacity = 0;
+        images[index].style.left = (event.clientX + xOffsetValues[index]) + "px";
+        images[index].style.top = (event.clientY + yOffsetValues[index]) + "px";
     });
+    
+    overlayItem.addEventListener('mouseleave', (event) => {
+        images[index].style.scale = 0;
+        cursorMain.style.opacity = 1;
 
-    head.addEventListener('mouseleave', function() {
-        cursorMain.style.height = "10px";
-        cursorMain.style.width = "10px";
+
     });
 });
-
-
-
-    // const cursor = document.getElementById('cursor');
-    // const menuIcon = document.getElementById('menu-icon');
-
-    // function calculateDistance(x1, y1, x2, y2) {
-    //     return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
-    // }
-
-    // function moveIcon(event) {
-    //     const mouseX = event.clientX;
-    //     const mouseY = event.clientY;
-
-    //     const iconX = menuIcon.getBoundingClientRect().left + menuIcon.clientWidth / 2;
-    //     const iconY = menuIcon.getBoundingClientRect().top + menuIcon.clientHeight / 2;
-
-    //     const distance = calculateDistance(mouseX, mouseY, iconX, iconY);
-    //     const magnetStrength = 5;
-
-    //     if (distance < 100) {
-    //         const translateX = (mouseX - iconX) / magnetStrength;
-    //         const translateY = (mouseY - iconY) / magnetStrength;
-
-    //         menuIcon.style.transform = `translate(${translateX}px, ${translateY}px)`;
-    //     } else {
-    //         menuIcon.style.transform = 'translate(0, 0)';
-    //     }
-    // }
-
-    // document.addEventListener('mousemove', moveIcon);
